@@ -4,7 +4,7 @@ from confluent_kafka import KafkaException
 
 # Grab environment variables
 #
-brokers = os.environ.get("brokers", "127.0.0.1:9092")
+brokers = os.environ.get("kafka_bootstrap_servers", "127.0.0.1:9092")
 
 print ("brokers=%s"%(brokers))
 
