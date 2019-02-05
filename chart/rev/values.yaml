@@ -1,0 +1,7 @@
+
+global:
+  aws_account: <no value>
+  aws_region: <no value>
+  cluster_name: example.com
+  application_url: rev.example.com
+  global_environment: []

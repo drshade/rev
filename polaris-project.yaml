@@ -1,0 +1,4 @@
+project: rev
+parameters:
+  cluster_name: example.com
+scaffold: core/stable/starter/project
