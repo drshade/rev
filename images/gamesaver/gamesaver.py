@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	consumer.subscribe(topics=[complete_topic])
 
 	# Client of firehost
-	client = boto3.client('firehose')
+	client = boto3.client('firehose', region_name='eu-west-1')
 
 	for message in consumer:
 		state = json.loads(message.value)
