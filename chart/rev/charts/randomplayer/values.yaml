@@ -1,7 +1,7 @@
 
 resource_name: randomplayer
 
-replicas: 3
+replicas: 20
 
 image:
   repository: polaris://rev-randomplayer

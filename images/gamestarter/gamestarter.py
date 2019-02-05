@@ -29,9 +29,9 @@ if __name__ == "__main__":
 			prod.send(to_topic, key=bytearray([whitepoints+blackpoints]), value=state.encode("ascii"))
 
 		prod.flush()
-		prod.close()
-
 		time.sleep(120)
+
+	prod.close()
 
 	end = time.time()
 	print("Took %0.3fs to generate %d iterations"%(end - start, iterations))
