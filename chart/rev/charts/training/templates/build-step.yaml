@@ -1,0 +1,18 @@
+apiVersion: polaris.synthesis.co.za/v1alpha1
+kind: PolarisBuildStep
+metadata:
+  name: training
+  labels:
+    polaris-project: rev
+    polaris-component: training
+    app: {{ template "thischart.name" $ }}
+    chart: {{ template "thischart.chart" $ }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service }}  
+spec:
+  pipeline: rev
+  builds:
+  - name: training
+    dockerfilelocation: images/training
+    containerregistry: rev-training
+    tag: 1.0.0

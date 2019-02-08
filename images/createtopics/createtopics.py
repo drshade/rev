@@ -20,6 +20,8 @@ if __name__ == "__main__":
 		NewTopic("completed_games", num_partitions=64, replication_factor=1),
 	]
 
+	# Somehow set log.retention.ms to about 30 minutes
+
 	# Create the topics
 	#
 	fs = admin.create_topics(new_topics)

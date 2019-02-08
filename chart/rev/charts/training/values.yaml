@@ -1,15 +1,15 @@
 
-resource_name: test
+resource_name: training
 
 replicas: 0
 
 image:
-  repository: polaris://rev-test
+  repository: polaris://rev-training
   tag: 1.0.0
   pullPolicy: Always
 
 environment:
-  kafka_bootstrap_servers: polaris-kafka-cp-kafka:9092
+  kafka_bootstrap_servers: polaris-kafka-cp-kafka.default:9092
 
 resources:
   requests:

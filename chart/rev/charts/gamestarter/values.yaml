@@ -1,7 +1,7 @@
 
 resource_name: gamestarter
 
-replicas: 3
+replicas: 0
 
 image:
   repository: polaris://rev-gamestarter
@@ -13,8 +13,8 @@ environment:
 
 resources:
   requests:
-    cpu: 250m
+    cpu: 50m
     memory: "256Mi"
   limits:
-    cpu: 500m
+    cpu: 100m
     memory: "512Mi"
