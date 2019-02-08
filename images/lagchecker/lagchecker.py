@@ -22,7 +22,8 @@ if __name__ == "__main__":
 			for topicpartition, offsetmetadata in admin.list_consumer_group_offsets(consumername).items():
 				consumer_topic, consumer_partition = topicpartition
 				offset, metadata = offsetmetadata
-				end_offset = consumer.end_offsets([topicpartition]).values()[0]
+
+				end_offset = list(consumer.end_offsets([topicpartition]).values())[0]
 				print("Consumer %s is %s / %s on topic %s (partition %s)"%(consumername, offset, end_offset, consumer_topic, consumer_partition))
 		time.sleep(10)
 
