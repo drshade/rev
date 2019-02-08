@@ -1,7 +1,7 @@
 
 resource_name: gamestarter
 
-replicas: 1
+replicas: 3
 
 image:
   repository: polaris://rev-gamestarter
