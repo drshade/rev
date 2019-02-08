@@ -6,7 +6,7 @@ import boto3
 # Grab environment variables
 #
 brokers = os.environ.get("kafka_bootstrap_servers", "127.0.0.1:9092")
-complete_topic = os.environ.get("complete_topic", "completed_games")
+complete_topic = os.environ.get("complete_topic", "complete_games")
 
 print ("brokers=%s"%(brokers))
 print ("complete_topic=%s"%(complete_topic))

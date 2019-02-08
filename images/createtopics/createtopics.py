@@ -17,7 +17,7 @@ if __name__ == "__main__":
 	print("Creating topic...")
 	new_topics = [
 		NewTopic("games", num_partitions=64, replication_factor=1),
-		NewTopic("completed_games", num_partitions=64, replication_factor=1),
+		NewTopic("complete_games", num_partitions=64, replication_factor=1),
 	]
 
 	# Somehow set log.retention.ms to about 30 minutes
