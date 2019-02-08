@@ -14,7 +14,8 @@ print ("complete_topic=%s"%(complete_topic))
 if __name__ == "__main__":
 	# Random play
 	client_id = "hypercomplete"
-	consumer = kafka.KafkaConsumer(bootstrap_servers=brokers, client_id=client_id)
+	group_id = "hypercomplete"
+	consumer = kafka.KafkaConsumer(bootstrap_servers=brokers, client_id=client_id, group_id=group_id)
 	consumer.subscribe(topics=[complete_topic])
 
 	# Client of firehost
