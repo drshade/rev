@@ -21,11 +21,11 @@ if __name__ == "__main__":
 		
 		print("Loading file: %s (%d records so far)"%(obj.key, len(records)))
 		getresp = obj.get()
-		body = getresp['Body'].read()
+		body = getresp['Body'].read().decode()
 		for entry in body.split('\n'):
 			records.append(entry)
 
-		print(records[0])
+		print(len(records[0]))
 		sys.exit(1)
 
 

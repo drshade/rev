@@ -22,13 +22,13 @@ if __name__ == "__main__":
 	client = boto3.client('firehose', region_name='eu-west-1')
 
 	for message in consumer:
-		state = json.loads(message.value)
-		#print (state)
+		state = json.loads(message.value.decode())
+		print (message.value.decode())
 		print("Writing to kinesis firehose...")
 
 		response = client.put_record(
 			DeliveryStreamName='reversi_random_games',
 		    Record={
-        		'Data': "%s\n"%(message.value)
+        		'Data': "%s\n"%(message.value.decode())
     		}
 		)

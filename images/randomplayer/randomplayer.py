@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
 	for message in consumer:
 		# Receive a game state
-		in_state = message.value
+		in_state = message.value.decode()
 
 		# Load the game state into a game
 		game = Reversi()
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 			complete_game_white_winner["moves"] = game._moves
 			out_state = game.state_to_string()
 			#print(json.dumps(complete_game_white_winner))
-			producer.send(complete_topic, value=json.dumps(complete_game_white_winner).encode("ascii"))
+			producer.send(complete_topic, value=json.dumps(complete_game_white_winner).encode())
 			producer.flush()
 
 			# Where black is the winner of this game
@@ -68,7 +68,7 @@ if __name__ == "__main__":
 				game.invert()
 			complete_game_white_loser["moves"] = game._moves
 			out_state = game.state_to_string()
-			producer.send(complete_topic, value=json.dumps(complete_game_white_loser).encode("ascii"))
+			producer.send(complete_topic, value=json.dumps(complete_game_white_loser).encode())
 			producer.flush()
 
 			continue
@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
 		# Save the next move
 		out_state = game.state_to_string()
-		producer.send(to_topic, key=bytearray([whitepoints+blackpoints]), value=out_state.encode("ascii"))
+		producer.send(to_topic, key=bytearray([whitepoints+blackpoints]), value=out_state.encode())
 		producer.flush()
 
 	start = time.time()

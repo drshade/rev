@@ -24,9 +24,9 @@ if __name__ == "__main__":
 
 			state = game.state_to_string()
 			(complete, whitepoints, blackpoints, empty) = game.stats()
-			#print(state)
-
-			prod.send(to_topic, key=bytearray([whitepoints+blackpoints]), value=state.encode("ascii"))
+			
+			print(state)
+			prod.send(to_topic, key=bytearray([whitepoints+blackpoints]), value=state.encode())
 
 		prod.flush()
 		
